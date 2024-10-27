@@ -47,11 +47,11 @@ Input a ticker and press add to watchlist to do that. To update the dip finder j
 Exciting updates coming soon, including:
 - **News**: See related news to a stock in the watchlist.
 - **Projections**: View estimated performance for the company
-- **Dividend Advisor**: Based on various factors, recommend companies that would be worth investing in.
 
+## 📢 Disclaimer
+This is not financial advice. SigmaSight is a tool for informational and educational purposes only. Always do your own research or consult a financial professional before making investment decisions.
 
 ## License
-
 [MIT](https://choosealicense.com/licenses/mit/) License
 
 Copyright (c) 2024 Holding-Space
