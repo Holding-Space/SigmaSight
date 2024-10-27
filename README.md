@@ -47,6 +47,7 @@ Input a ticker and press add to watchlist to do that. To update the dip finder j
 Exciting updates coming soon, including:
 - **News**: See related news to a stock in the watchlist.
 - **Projections**: View estimated performance for the company
+- **Dividend Advisor**: Based on various factors, recommend companies that would be worth investing in.
 
 
 ## License
