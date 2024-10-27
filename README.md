@@ -25,11 +25,18 @@ Run the application:
 ```bash
 python SigmaSight.py
 ```
-Main Menu - There will be various graphs which will display data on the company. Scroll down to view more charts.
 
-Sidebar - Enter your ticker and press update, data will update after a sec. Scroll in the sidebar to see various data like: Piotroski Score, Margins & Growth, Balance and Company Value data.
+**Main Menu**
 
-Watchlist - Input a ticker and press add to watchlist to do that. To update the dip finder just close and reopen the watchlist. 
+There will be various graphs which will display data on the company. Scroll down to view more charts.
+
+**Sidebar**
+
+Enter your ticker and press update, data will update after a sec. Scroll in the sidebar to see various data like: Piotroski Score, Margins & Growth, Balance and Company Value data.
+
+**Watchlist**
+
+Input a ticker and press add to watchlist to do that. To update the dip finder just close and reopen the watchlist. 
 ## Screenshots 📸
 ![Main view](https://i.imgur.com/7QevEh9.png)
 
