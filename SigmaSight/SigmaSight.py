@@ -49,7 +49,7 @@ def set_colours(ax):
 ## Graphs
 def plot_stock_ytd(stock_symbol, ax):
     today = datetime.today().strftime('%Y-%m-%d')
-    stock_data = yf.download(stock_symbol, start=f'{datetime.today().year}-01-01', end=today)
+    stock_data = yf.download(stock_symbol, start=f'{datetime.today().year}-01-01', end=today, multi_level_index=False)
     
     # Plot the stock data
     ax.plot(stock_data.index, stock_data['Close'], label='YTD Price', color='blue')
@@ -77,12 +77,6 @@ def plot_revenue(stock_symbol, ax):
     financials = stock.financials.T
     revenue = financials['Total Revenue'].dropna()
     revenue = revenue[revenue.index.year >= 2002]
-
-    current_value = revenue.iloc[-1]
-    previous_value = revenue.iloc[-2] if len(revenue) > 1 else None
-    
-    # Calculate percentage change
-    percentage_change = ((current_value - previous_value) / previous_value * 100) if previous_value else None
     
     ax.bar(revenue.index.year, revenue.values, color='#3b86ff', width=0.95)
     ax.set_title('Revenue', color='white', loc='left', fontsize=18, x=-0.1258)
@@ -203,7 +197,7 @@ def plot_shares_outstanding(stock_symbol, ax):
 
 def plot_market_cap(stock_symbol, ax):
     stock = yf.Ticker(stock_symbol)
-    stock_data = yf.download(stock_symbol, start='2002-01-01')
+    stock_data = yf.download(stock_symbol, start='2002-01-01', multi_level_index=False)
     shares_outstanding = stock.balance_sheet.T['Ordinary Shares Number'].dropna()
     
     market_cap = stock_data['Close'] * (shares_outstanding)  # Convert to billions
@@ -219,7 +213,7 @@ def plot_market_cap(stock_symbol, ax):
 
 def plot_ev(stock_symbol, ax):
     stock = yf.Ticker(stock_symbol)
-    stock_data = yf.download(stock_symbol, start='2002-01-01')
+    stock_data = yf.download(stock_symbol, start='2002-01-01', multi_level_index=False)
     balance_sheet = stock.balance_sheet.T
     cash = balance_sheet['Cash And Cash Equivalents'].dropna()
     total_debt = balance_sheet['Total Debt'].dropna()
@@ -243,7 +237,7 @@ def plot_pe_ratio(stock_symbol, ax):
     shares_outstanding = stock.balance_sheet.T['Ordinary Shares Number'].dropna()
     net_income = financials['Net Income'].dropna()
     eps = net_income / shares_outstanding
-    stock_data = yf.download(stock_symbol, start='2002-01-01')
+    stock_data = yf.download(stock_symbol, start='2002-01-01', multi_level_index=False)
     
     pe_ratio = stock_data['Close'] / eps  # P/E ratio
     pe_ratio = pe_ratio.dropna()  # Remove empty values
